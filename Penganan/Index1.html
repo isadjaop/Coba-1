@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penanganan - Program Kepelatihan Surabaya</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style3.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <div class="logo">
+                    <img src="../Img/Hasil akhr.svg" alt="UniMap Logo">
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#PetaInteraktif">Peta Interaktif</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">PENANGANAN</h1>
+            <p class="hero-subtitle">Program kepelatihan dan kemitraan sosial di Kecamatan Surabaya</p>
+
+            <div class="filter-section">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <div class="filter-dropdown">
+                                <i class="fas fa-map-marker-alt me-2" style="color: #e74c3c;"></i>
+                                <select id="kecamatan">
+                                    <option value="">Kecamatan</option>
+                                    <option value="asemrowo">Asemrowo</option>
+                                    <option value="benowo">Benowo</option>
+                                    <option value="bubutan">Bubutan</option>
+                                    <option value="bulak">Bulak</option>
+                                    <option value="dukuh-pakis">Dukuh Pakis</option>
+                                    <option value="gayungan">Gayungan</option>
+                                    <option value="genteng">Genteng</option>
+                                    <option value="gubeng">Gubeng</option>
+                                    <option value="gunung-anyar">Gunung Anyar</option>
+                                    <option value="jambangan">Jambangan</option>
+                                    <option value="karang-pilang">Karang Pilang</option>
+                                    <option value="kenjeran">Kenjeran</option>
+                                    <option value="krembangan">Krembangan</option>
+                                    <option value="lakarsantri">Lakarsantri</option>
+                                    <option value="mulyorejo">Mulyorejo</option>
+                                    <option value="pabean-cantian">Pabean Cantian</option>
+                                    <option value="pakal">Pakal</option>
+                                    <option value="rungkut">Rungkut</option>
+                                    <option value="sambikerep">Sambikerep</option>
+                                    <option value="sawahan">Sawahan</option>
+                                    <option value="semampir">Semampir</option>
+                                    <option value="simokerto">Simokerto</option>
+                                    <option value="sukolilo">Sukolilo</option>
+                                    <option value="sukomanunggal">Sukomanunggal</option>
+                                    <option value="tambaksari">Tambaksari</option>
+                                    <option value="tandes">Tandes</option>
+                                    <option value="tegalsari">Tegalsari</option>
+                                    <option value="tenggilis">Tenggilis</option>
+                                    <option value="kendangsari">Kendangsari</option>
+                                    <option value="kutisari">Kutisari</option>
+                                    <option value="wiyung">Wiyung</option>
+                                </select>
+                            </div>
+                            <div class="filter-dropdown">
+                                <i class="fas fa-graduation-cap me-2" style="color: #e74c3c;"></i>
+                                <select id="jenisPelatihan">
+                                    <option value="">Jenis Pelatihan</option>
+                                    <option value="kewirausahaan">Kewirausahaan</option>
+                                    <option value="keahlian-digital">Keahlian Digital</option>
+                                    <option value="keterampilan-teknis">Keterampilan Teknis</option>
+                                    <option value="pertanian-urban">Pertanian Urban</option>
+                                    <option value="kerajinan-tangan">Kerajinan Tangan</option>
+                                    <option value="kuliner">Kuliner</option>
+                                </select>
+                            </div>
+                            <div class="filter-dropdown">
+                                <i class="fas fa-users me-2" style="color: #e74c3c;"></i>
+                                <select id="jenisMitra">
+                                    <option value="">Jenis Mitra / Komunitas</option>
+                                    <option value="umkm">UMKM</option>
+                                    <option value="karang-taruna">Karang Taruna</option>
+                                    <option value="organisasi-sosial">Organisasi Sosial</option>
+                                    <option value="lembaga-pendidikan">Lembaga Pendidikan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn-filter" onclick="applyFilters()">Terapkan Filter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <!-- Tabs -->
+            <div class="content-tabs">
+                <button class="tab-button active" onclick="switchTab('pelatihan')">Pelatihan</button>
+                <button class="tab-button" onclick="switchTab('mitra')">Mitra</button>
+            </div>
+
+            <!-- Sort Dropdown -->
+            <div class="sort-dropdown">
+                <select class="form-select" style="width: auto;">
+                    <option>Sort By : Terbaru</option>
+                    <option>Sort By : Nama A-Z</option>
+                    <option>Sort By : Lokasi</option>
+                </select>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- Training Cards -->
+            <div id="pelatihan-content">
+                <div class="row" id="trainingCardsContainer">
+                    <!-- Cards will be dynamically generated -->
+                </div>
+
+                <!-- Community Card -->
+                <div class="community-card">
+                    <div class="community-avatar"></div>
+                    <div class="community-info">
+                        <h5>Karang Taruna</h5>
+                        <p>Organisasi sosial yang bergerak dalam upaya pembinaan dan pengembangan generasi muda</p>
+                    </div>
+                </div>
+
+                <!-- Placeholder Cards -->
+                <div class="training-card" style="height: 120px; background-color: #f8f9fa; margin-top: 1rem;">
+                    <h5>Remas</h5>
+                    <p>Organisasi sosial yang bergerak dalam upaya pembinaan dan pengembangan generasi muda</p>
+                </div>
+            </div>
+
+            <!-- Mitra Content (Hidden by default) -->
+            <div id="mitra-content" style="display: none;">
+                <div class="row" id="mitraCardsContainer">
+                    <!-- Mitra cards will be dynamically generated -->
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <nav>
+                <ul class="pagination pagination-custom" id="paginationContainer">
+                    <!-- Pagination will be dynamically generated -->
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Training Detail Modal -->
+    <div class="modal fade" id="trainingDetailModal" tabindex="-1" aria-labelledby="trainingDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="trainingDetailModalLabel">Detail Pelatihan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="trainingDetailContent">
+                    <!-- Content will be dynamically loaded -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary">Daftar Pelatihan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Penganan/script.js"></script>
+</body>
+
+</html>

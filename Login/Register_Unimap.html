@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniMap - Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Login/RegistStyle.css">
+</head>
+<body>
+    <div class="split-container">
+        <!-- Left Panel - Registration Form -->
+        <div class="left-panel">
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid p-0">
+                    <button class="navbar-toggler" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand ms-3" href="#">UniMap</a>
+                </div>
+            </nav>
+            
+            <!-- Registration Form -->
+            <div class="registration-content">
+                <h1 class="register-title">Register akun anda</h1>
+                <p class="register-subtitle">
+                    Dapatkan fitur tambahan seperti menyimpan lokasi favorit, 
+                    mendapatkan rekomendasi pribadi, dan banyak lagi.
+                </p>
+                
+                <!-- Alert Messages -->
+                <div id="alertContainer"></div>
+                <form id="registerForm" method="POST" action="./register.php">
+                    <!-- Email Field -->
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Alamat Email</label>
+                        <input type="email" class="form-control" id="email" name="email" 
+                               placeholder="12345678@gmail.com" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <!-- Name Field -->
+                    <div class="mb-4">
+                        <label for="name" class="form-label">Masukan nama anda</label>
+                        <input type="text" class="form-control" id="name" name="name" 
+                               placeholder="ABCD_01" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <!-- Password Field -->
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Masukan Password anda</label>
+                        <div class="password-container">
+                            <input type="password" class="form-control" id="password" name="password" 
+                                   placeholder="Type your password here" required>
+                            <span class="password-strength" id="passwordStrength"></span>
+                            <button type="button" class="password-toggle" id="togglePassword">
+                            </button>
+                        </div>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <!-- Options -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="saveLogin" name="save_login">
+                            <label class="form-check-label" for="saveLogin">
+                                Simpan data login ?
+                            </label>
+                        </div>
+                        <a href="" class=""></a>
+                    </div>
+                    
+                    <!-- Register Button -->
+                    <button type="submit" class="btn btn-primary btn-register">
+                        <span class="spinner-border spinner-border-sm d-none" id="registerSpinner"></span>
+                        <span id="registerText">Daftar</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Right Panel - Login Prompt -->
+        <div class="right-panel">
+            <div class="decorative-circles">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+                <div class="circle circle-4"></div>
+            </div>
+            
+            <div class="content">
+                <h2>Sudah Punya Akun ?</h2>
+                <p>
+                    Untuk tetap terhubung dengan kami silakan login dengan info pribadi anda
+                </p>
+                <a href="./Login_Unimap.html" class="btn-login">Masuk</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Login/Regist.js"></script>
+</body>
+</html>
